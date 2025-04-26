@@ -19,7 +19,7 @@ body {
 
 .introTitle {
     color: var(--color-heading);
-    font-weight: bolder;
+        font-weight: bolder;
     letter-spacing: -2.5px;
 }
 
