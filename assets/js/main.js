@@ -17,6 +17,16 @@ if (titleEl) {
     }, 2800);
 }
 
+// Language toggle
+const langBtn = document.getElementById('lang-toggle');
+if (langBtn) {
+    langBtn.addEventListener('click', () => {
+        const hash = window.location.hash || '';
+        const isEn = document.documentElement.lang === 'en';
+        window.location.href = (isEn ? 'es.html' : 'en.html') + hash;
+    });
+}
+
 // Theme toggle
 const toggleBtn = document.getElementById('theme-toggle');
 if (toggleBtn) {

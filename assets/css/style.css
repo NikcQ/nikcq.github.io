@@ -461,6 +461,37 @@ img {
     background-size: 16px 16px;
   }
 
+/* LANGUAGE TOGGLE BUTTON */
+.lang-toggle {
+    position: fixed;
+    top: 24px;
+    right: 76px;
+    z-index: 1001;
+    background: var(--color-brand2);
+    border: none;
+    border-radius: 50px;
+    height: 42px;
+    padding: 0 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #333333;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: inherit;
+}
+
+.lang-toggle i {
+    font-size: 1.2rem;
+}
+
+.lang-toggle:hover {
+    background: var(--color-brand);
+    color: #fff;
+}
+
 /* THEME TOGGLE BUTTON */
 .theme-toggle {
     position: fixed;
