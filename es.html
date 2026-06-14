@@ -14,7 +14,17 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar">
+<body data-bs-spy="scroll" data-bs-ta
+    <!-- SIDE NAV DOTS -->
+    <nav class="side-dots">
+        <a href="#home" class="side-dot" data-label="Inicio"></a>
+        <a href="#work" class="side-dot" data-label="Experiencia"></a>
+        <a href="#about" class="side-dot" data-label="Educación"></a>
+        <a href="#langs" class="side-dot" data-label="Idiomas"></a>
+        <a href="#services" class="side-dot" data-label="Servicios"></a>
+        <a href="#contact" class="side-dot" data-label="Contacto"></a>
+    </nav>
+    <!-- //SIDE NAV DOTS -->
 
     <!-- CONTENT WRAPPER -->
     <div id="content-wrapper">
@@ -25,23 +35,38 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h1 class="display-4 fw-bold introTitle" data-aos="fade-up">¡Hola! Soy un <span class="text-brand">Arquitecto de Soluciones</span> de Colombia</h1>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            Mi nombre es Nicolás La Rotta.
-                            Soy Ingeniero Cloud, Arquitecto de soluciones, Ex-amazonian e Ingeniero de Sistemas y Computación graduado de la Universidad Nacional de Colombia. Con 3 años de experiencia .</p>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            Actualmente estoy: <span class="text-brand">Empleado</span>
-                        </p>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            Echa un vistazo y conoce más sobre mí.
-                        </p>
-                        <div data-aos="fade-up" data-aos-delay="600">
-                            <a href="#work" class="btn btn-brand me-3">Explora Mi Perfil</a>
+                        <p class="text-brand fw-bold mb-1" data-aos="fade-up" style="letter-spacing: 2px; font-size: 0.95rem; text-transform: uppercase;">¡Hola, Mundo!</p>
+                        <h1 class="display-3 fw-bold introTitle lh-sm mb-4" data-aos="fade-up" data-aos-delay="150">Soy un <span class="text-brand">Arquitecto de Soluciones</span><br>de Colombia</h1>
+
+                        <div class="d-flex flex-column flex-lg-row align-items-center mt-3" style="gap: 5rem;">
+
+                            <div class="profile-orbit flex-shrink-0 mx-auto" data-aos="fade-up" data-aos-delay="600">
+                                <img src="./assets/images/fotoperfil2.jpg" class="orbit-photo" alt="Nicolas La Rotta">
+                                <div class="orbit-chip" style="--orbit-angle: -45deg"><span class="orbit-dot"></span><span id="years-exp"></span> de experiencia</div>
+                                <div class="orbit-chip" style="--orbit-angle: 45deg"><span class="orbit-dot"></span>Ex-Amazonian</div>
+                                <div class="orbit-chip" style="--orbit-angle: 135deg"><span class="orbit-dot"></span>4× Certificados AWS</div>
+                                <div class="orbit-chip" style="--orbit-angle: -135deg"><span class="orbit-dot"></span>Del Código a la Nube</div>
+                            </div>
+
+                            <div class="text-lg-start" data-aos="fade-up" data-aos-delay="300">
+                                <p class="lead mb-3">
+                                    Mi nombre es Nicolás La Rotta.
+                                    Soy Ingeniero Cloud, Arquitecto de soluciones, Ex-amazonian e Ingeniero de Sistemas y Computación graduado de la Universidad Nacional de Colombia.</p>
+                                <p class="lead mb-3">
+                                    Actualmente estoy: <span class="text-brand">Empleado</span>
+                                </p>
+                                <p class="lead mb-4">
+                                    Echa un vistazo y conoce más sobre mí.
+                                </p>
+                                <a href="./assets/downloadables/cv-es.pdf" download class="btn btn-brand me-3">Descarga mi CV</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
+            <a href="#work" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- //HOME -->
 
@@ -90,6 +115,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#about" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- WORK EXPERIENCE -->
 
@@ -186,6 +212,7 @@
                 </div>
 
             </div>
+            <a href="#langs" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- //ABOUT -->
 
@@ -249,7 +276,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            <a href="#services" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!--/LANGUAGES-->
 
@@ -318,7 +345,7 @@
                 </div>
 
 
-            </div>
+            <a href="#contact" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- SERVICES -->
 

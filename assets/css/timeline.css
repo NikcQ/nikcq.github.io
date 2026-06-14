@@ -40,7 +40,7 @@
   content: "";
   position: absolute;
   width: 50%;
-  border: solid #f64740;
+  border: solid #c4607e;
 }
 
 /* Setting the border of top, bottom, left */
@@ -99,7 +99,7 @@
 
 /* Title of the card */
 .timetitle {
-  color: #f64740;
+  color: #c4607e;
   position: relative;
 }
 

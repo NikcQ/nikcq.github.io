@@ -5,7 +5,7 @@
     --color-heading: #white;
     --color-base: #033f47;
     --color-base2: #333333;
-    --color-brand: #f64740;
+    --color-brand: #c4607e;
     --color-brand2: #E3C0D3;
     --sidbar-width: 340px;
     --font-base: "Helvetica";
@@ -300,7 +300,9 @@ img {
 /* BTN */
 .btn {
     padding: 12px 28px;
-    font-weight: 900;
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 0.5px;
 }
 
 .btn-brand {
