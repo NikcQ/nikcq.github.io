@@ -1,4 +1,31 @@
 AOS.init();
+
+// Dynamic experience counter
+const expEl = document.getElementById('years-exp');
+if (expEl) {
+    const start = new Date('2023-06-01');
+    const now = new Date();
+    const totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    expEl.textContent = months > 0 ? `${years}.${Math.round(months / 12 * 10)}+ years` : `${years}+ years`;
+}
+
+// Side nav dots scroll spy
+const sections = document.querySelectorAll('section[id]');
+const dots = document.querySelectorAll('.side-dot');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            const active = document.querySelector(`.side-dot[href="#${entry.target.id}"]`);
+            if (active) active.classList.add('active');
+        }
+    });
+}, { threshold: 0.4 });
+
+sections.forEach(section => observer.observe(section));
 // You can also pass an optional settings object
 // below listed default settings
 AOS.init({

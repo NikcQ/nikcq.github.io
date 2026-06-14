@@ -18,10 +18,14 @@
   padding: 20px;
 }
 
+.outer {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 /* Card container */
 .timecard {
   position: relative;
-  max-width: 400px;
 }
 
 /* setting padding based on even or odd */
