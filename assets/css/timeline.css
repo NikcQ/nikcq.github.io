@@ -13,15 +13,19 @@
 
 /* Timeline Container */
 .timeline {
-  background: var(--primary-color);
+  background: var(--color-base2);
   margin: 20px auto;
   padding: 20px;
+}
+
+.outer {
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 /* Card container */
 .timecard {
   position: relative;
-  max-width: 400px;
 }
 
 /* setting padding based on even or odd */
@@ -36,7 +40,7 @@
   content: "";
   position: absolute;
   width: 50%;
-  border: solid #f64740;
+  border: solid #c4607e;
 }
 
 /* Setting the border of top, bottom, left */
@@ -87,15 +91,15 @@
 .timeinfo {
   display: flex;
   flex-direction: column;
-  background: #333333;
-  color: gray;
+  background: var(--color-base2);
+  color: var(--color-body);
   border-radius: 10px;
   padding: 10px;
 }
 
 /* Title of the card */
 .timetitle {
-  color: #f64740;
+  color: #c4607e;
   position: relative;
 }
 
