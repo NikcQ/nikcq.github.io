@@ -11,10 +11,19 @@
     <link rel="stylesheet" href="./assets/css/line-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar">
 
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="las la-sun"></i></button>
 
     <!-- CONTENT WRAPPER -->
     <div id="content-wrapper">

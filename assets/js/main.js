@@ -1,3 +1,40 @@
+// Rotating title
+const titleEl = document.getElementById('rotating-title');
+if (titleEl) {
+    const titles = JSON.parse(titleEl.dataset.titles);
+    let idx = 0;
+    setInterval(() => {
+        titleEl.classList.add('title-exit');
+        setTimeout(() => {
+            idx = (idx + 1) % titles.length;
+            titleEl.textContent = titles[idx];
+            titleEl.classList.remove('title-exit');
+            titleEl.classList.add('title-enter');
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                titleEl.classList.remove('title-enter');
+            }));
+        }, 350);
+    }, 2800);
+}
+
+// Theme toggle
+const toggleBtn = document.getElementById('theme-toggle');
+if (toggleBtn) {
+    const updateIcon = (theme) => {
+        const icon = toggleBtn.querySelector('i');
+        if (icon) icon.className = theme === 'dark' ? 'las la-sun' : 'las la-moon';
+    };
+
+    updateIcon(document.documentElement.getAttribute('data-theme'));
+
+    toggleBtn.addEventListener('click', () => {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateIcon(next);
+    });
+}
+
 AOS.init();
 
 // Dynamic experience counter

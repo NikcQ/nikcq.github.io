@@ -170,7 +170,7 @@ img {
     width: 340px;
     height: 340px;
     border-radius: 50%;
-    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border: 1px dashed var(--color-brand2);
     pointer-events: none;
 }
 
@@ -237,6 +237,22 @@ img {
         font-size: 0.7rem;
         padding: 4px 10px;
     }
+}
+
+/* ROTATING TITLE */
+#rotating-title {
+    display: inline-block;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#rotating-title.title-exit {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+#rotating-title.title-enter {
+    opacity: 0;
+    transform: translateY(10px);
 }
 
 /* SECTION CHEVRON */
@@ -442,5 +458,108 @@ img {
     background-image: url("/assets/images/uk.png");
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 16px 16px; /* Adjust the width and height to resize the image */
+    background-size: 16px 16px;
   }
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1001;
+    background: var(--color-brand2);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    color: #333333;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: var(--color-brand);
+    color: #fff;
+}
+
+/* LIGHT MODE */
+[data-theme="light"] {
+    --color-body: #2d2d2d;
+    --color-base2: #f0ebe5;
+}
+
+[data-theme="light"] body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+}
+
+[data-theme="light"] .full-height {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .bg-base {
+    background: #e4ddd7 !important;
+    box-shadow: 5px 5px 7px #cac4be, -5px -5px 7px #ffffff;
+}
+
+[data-theme="light"] .iconbox {
+    color: #333333;
+}
+
+[data-theme="light"] .shadow-effect:hover {
+    box-shadow: 5px 10px 30px var(--color-brand),
+                -5px -10px 30px var(--color-brand);
+}
+
+[data-theme="light"] .orbit-chip {
+    background: #e4ddd7;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--color-body);
+}
+
+[data-theme="light"] .section-chevron {
+    color: var(--color-brand);
+}
+
+[data-theme="light"] .btn-brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: #fff;
+}
+
+[data-theme="light"] .btn-brand:hover,
+[data-theme="light"] .btn-brand:focus {
+    background-color: transparent;
+    color: var(--color-brand);
+    border-color: var(--color-brand);
+}
+
+[data-theme="light"] a {
+    color: var(--color-body);
+}
+
+[data-theme="light"] .side-dot {
+    background: #2d2d2d;
+}
+
+[data-theme="light"] .side-dot.active {
+    background: var(--color-brand);
+}
+
+[data-theme="light"] .side-dot:hover {
+    background: var(--color-brand2);
+}
+
+[data-theme="light"] #contact .form-control {
+    background-color: #e4ddd7;
+    border-color: #e4ddd7;
+    color: var(--color-body);
+}
+
+[data-theme="light"] #contact .form-control::placeholder {
+    color: #888;
+}
