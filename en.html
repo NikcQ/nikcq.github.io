@@ -15,8 +15,7 @@
     <script>
         (function() {
             var saved = localStorage.getItem('theme');
-            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+            document.documentElement.setAttribute('data-theme', saved || 'light');
         })();
     </script>
 </head>
@@ -55,7 +54,7 @@
                         <div class="d-flex flex-column flex-lg-row align-items-center mt-3" style="gap: 5rem;">
 
                             <div class="profile-orbit flex-shrink-0 mx-auto" data-aos="fade-up" data-aos-delay="600">
-                            <img src="./assets/images/fotoperfil2.jpg" class="orbit-photo" alt="Nicolas La Rotta">
+                            <img src="./assets/images/Fotoperfil2.jpg" class="orbit-photo" alt="Nicolas La Rotta">
                             <div class="orbit-chip" style="--orbit-angle: -45deg"><span class="orbit-dot"></span><span id="years-exp"></span> experience</div>
                             <div class="orbit-chip" style="--orbit-angle: 45deg"><span class="orbit-dot"></span>Ex-Amazonian</div>
                             <div class="orbit-chip" style="--orbit-angle: 135deg"><span class="orbit-dot"></span>4× AWS Certified</div>
