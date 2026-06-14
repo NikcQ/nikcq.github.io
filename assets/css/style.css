@@ -239,6 +239,18 @@ img {
     }
 }
 
+/* CERT CARDS */
+.cert-verify {
+    font-size: 0.78rem;
+    color: var(--color-brand);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-card:hover .cert-verify {
+    opacity: 1;
+}
+
 /* ROTATING TITLE */
 #rotating-title {
     display: inline-block;
