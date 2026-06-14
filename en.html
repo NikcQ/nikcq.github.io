@@ -12,49 +12,28 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/timeline.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            document.documentElement.setAttribute('data-theme', saved || 'light');
+        })();
+    </script>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar">
+<body>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language"><i class="las la-language"></i>ES</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="las la-sun"></i></button>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container flex-lg-column">
-            <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
-                <span class="h3 fw-bold d-block d-lg-none">NikcQ</span>
-                <img src="./assets/images/fotoperfil2.jpg" class="d-none d-lg-block rounded-circle" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work">Work Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#langs">Languages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
+    <!-- SIDE NAV DOTS -->
+    <nav class="side-dots">
+        <a href="#home" class="side-dot" data-label="Home"></a>
+        <a href="#work" class="side-dot" data-label="Experience"></a>
+        <a href="#about" class="side-dot" data-label="Education"></a>
+        <a href="#langs" class="side-dot" data-label="Languages"></a>
+        <a href="#services" class="side-dot" data-label="Services"></a>
+        <a href="#contact" class="side-dot" data-label="Contact"></a>
     </nav>
-    <!-- //NAVBAR -->
+    <!-- //SIDE NAV DOTS -->
 
     <!-- CONTENT WRAPPER -->
     <div id="content-wrapper">
@@ -62,28 +41,45 @@
         <!-- HOME -->
         <section id="home" class="full-height px-lg-5">
 
-
-
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h1 class="display-4 fw-bold introTitle" data-aos="fade-up">Hello! I'm a <span class="text-brand">Solutions Architect</span> Hailing all the way from Colombia</h1>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            My name is Nicolas La Rotta,
-                            I'm a Systems & Computing Engineer graduate from the Colombian National University (@UNAL).</p>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            I am currently: <span class="text-brand">Employed</span>
-                        </p>
-                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                            Take a look around and find out more about me.
-                        </p>
-                        <div data-aos="fade-up" data-aos-delay="600">
-                            <a href="#about" class="btn btn-brand me-3">Explore My Work</a>
+                        <p class="text-brand fw-bold mb-1" data-aos="fade-up" style="letter-spacing: 2px; font-size: 0.95rem; text-transform: uppercase;">Hello, World!</p>
+                        <h1 class="display-3 fw-bold introTitle lh-sm mb-4" data-aos="fade-up" data-aos-delay="150"><span class="d-flex align-items-baseline justify-content-center gap-3">
+                            <span>I'm a</span>
+                            <span class="text-brand" id="rotating-title" data-titles='["Solutions Architect","Cloud Engineer","AWS Developer"]'>Solutions Architect</span>
+                        </span>
+                        from Colombia</h1>
+
+                        <div class="d-flex flex-column flex-lg-row align-items-center mt-3" style="gap: 5rem;">
+
+                            <div class="profile-orbit flex-shrink-0 mx-auto" data-aos="fade-up" data-aos-delay="600">
+                            <img src="./assets/images/Fotoperfil2.jpg" class="orbit-photo" alt="Nicolas La Rotta">
+                            <div class="orbit-chip" style="--orbit-angle: -45deg"><span class="orbit-dot"></span><span id="years-exp"></span> experience</div>
+                            <div class="orbit-chip" style="--orbit-angle: 45deg"><span class="orbit-dot"></span>Ex-Amazonian</div>
+                            <div class="orbit-chip" style="--orbit-angle: 135deg"><span class="orbit-dot"></span>4× AWS Certified</div>
+                            <div class="orbit-chip" style="--orbit-angle: -135deg"><span class="orbit-dot"></span>Code to Cloud</div>
+                            </div>
+
+                            <div class="text-lg-start" data-aos="fade-up" data-aos-delay="300">
+                                <p class="lead mb-3">
+                                    My name is Nicolas La Rotta,
+                                    I'm a Systems & Computing Engineer graduate from the Colombian National University (@UNAL).</p>
+                                <p class="lead mb-3">
+                                    I am currently: <span class="text-brand">Employed</span>
+                                </p>
+                                <p class="lead mb-4">
+                                    Take a look around <span class="text-brand">by scrolling down</span> and find out more about me.
+                                </p>
+                                <a href="./assets/downloadables/cv-en.pdf" download class="btn btn-brand me-3">Download CV</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
+            <a href="#work" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- //HOME -->
 
@@ -92,21 +88,32 @@
             <div class="container">
                 <div class="timeline">
                     <div class="outer">
+                        <!--Job0-->
+                        <div class="timecard">
+                            <div class="service p-4 bg-base rounded-4 shadow-effect">
+                                <h3 class="timetitle">AWS Developer</h3>
+                                <h5 class="mt-4 mb-2">NeuraFlash</h5>
+                                <p class="text-brand">2026</p>
+                                <p>I am currently working here.</p>
+                            </div>
+                        </div>
+                        <!--/Job0-->
                         <!--Job1-->
                         <div class="timecard">
                             <div class="service p-4 bg-base rounded-4 shadow-effect">
                                 <h3 class="timetitle">Professional Services I</h3>
                                 <h5 class="mt-4 mb-2">Amazon Web Services</h5>
-                                <p class="text-brand ">2025</p>
+                                <p class="text-brand ">2025 - 2026</p>
                                 <p>ProServe Delivery Consultant</p>
                                 <p>Responsibilities:</p>
                                 <p>- Consulted & advised different external companies on their cloud migrations and solved their cloud computing business needs.</p>
+                                <p>- Consulted for public sector clients, advising, reviewing and building cloud solutions for public health institutions.</p>
                                 <p>- Designed software architectures for different projects both internal use and for external clients.</p>
                                 <p>- Created serverless cloud systems, ensuring security, high availability and fault tolerance.</p>
                                 <p>- Implemented CI/CD Pipelines to safeguard and separate production environments from development.</p>
                                 <p>- Created, tested and presented multiple cloud-native applications using Infrastructure as Code (IaC), using AWS CDK and Terraform.</p>
                                 <p>- Studied and became proficient in Artificial Intelligence (AI), and created systems that use these technologies natively in the cloud.</p>
-                                <p>- Assisted in the onboarding, training and certification of multiple people of different technological and professional backgrounds, successfully transfering knowledge.</p>
+                                <p>- Assisted in the onboarding, training and certification of multiple people of different technological and professional backgrounds, successfully transferring knowledge.</p>
                             </div>
                         </div>
                         <!--/Job1-->
@@ -115,15 +122,15 @@
                             <div class="service p-4 bg-base rounded-4 shadow-effect">
                                 <h3 class="timetitle">Software Development Trainee</h3>
                                 <h5 class="mt-4 mb-2">Amadeus</h5>
-                                <p class="text-brand ">2023</p>
+                                <p class="text-brand ">2023 - 2024</p>
                                 <p>Angular Front-End Development Engineer</p>
                                 <p>Responsibilities:</p>
                                 <p>- Developed Airport/Airline Check-in, Disruption & Departure Cloud-Based software in
-                                    TypeSript & Angular 16/17.</p>
+                                    TypeScript & Angular 16/17.</p>
                                 <p>- Engaged in a multi-cultural, global development team under AGILE Scrum
                                     methodologies.</p>
-                                <p>- Assisted in CORE model & type updates to classes and interfaces’ new standards.</p>
-                                <p>- Worked with Microsoft Azure Development DevOps for software versioning (git)</p>
+                                <p>- Assisted in CORE model & type updates to classes and interfaces' new standards.</p>
+                                <p>- Worked with Microsoft Azure DevOps for software versioning (git).</p>
                                 <p>- Created Unit testing with JEST for Angular.</p>
                                 <p>- Participated in multiple company-wide training programmes and trainings.</p>
                             </div>
@@ -132,6 +139,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#about" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- WORK EXPERIENCE -->
 
@@ -139,50 +147,108 @@
         <section id="about" class="full-height px-lg-5">
             <div class="container">
 
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
+                <!-- Education heading -->
+                <div class="row pb-4 justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
                         <h6 class="text-brand">So, who am I?</h6>
-                        <h1>Studies & relevant experience:</h1>
+                        <h1>Education:</h1>
                     </div>
                 </div>
 
-                <div class="row gy-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Education:</h3>
-                        <div class="row gy-4">
+                <!-- Education cards -->
+                <div class="row gy-4 justify-content-center">
 
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
-                                <div class="bg-base p-4 rounded-4 shadow-effect">
-                                    <h4>Systems & Computing Engineering</h4>
-                                    <p class="text-brand mb-2">UNAL, Bogotá, Colombia </p>
-                                    <p class="mb-0">Computer Science,
-                                        Information Technology, Network engineering, Software development and Cyber security.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
-                                <div class="bg-base p-4 rounded-4 shadow-effect">
-                                    <h4>Full-Stack Web Development with React</h4>
-                                    <p class="text-brand mb-2">The Hong Kong University of Science and Technology
-                                        (Coursera), 2021</p>
-                                    </p>
-                                    <p class="mb-0">Modern Front-End & Back end Development</p>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
-                                <div class="bg-base p-4 rounded-4 shadow-effect">
-                                    <h4>Full-Stack Web Development with Angular</h4>
-                                    <p class="text-brand mb-2">The Hong Kong University of Science and Technology
-                                        (Coursera), 2021</p>
-                                    </p>
-                                    <p class="mb-0">Modern Front-End & Back end Development</p>
-                                </div>
-                            </div>
+                    <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect h-100">
+                            <img src="./assets/images/unal.jpg" alt="UNAL">
+                            <h5 class="mt-4 mb-2">Systems & Computing Engineering</h5>
+                            <p class="text-brand mb-0">Universidad Nacional de Colombia, 2025</p>
+                            <p class="mb-0"><i>Computer Science, Networks, Software Development & Cybersecurity</i></p>
                         </div>
                     </div>
+
+                    <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="450">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect h-100">
+                            <img src="./assets/images/hkust.png" alt="HKUST">
+                            <h5 class="mt-4 mb-2">Full-Stack Web Development with React</h5>
+                            <p class="text-brand mb-0">HKUST (Coursera), 2021</p>
+                            <p class="mb-0"><i>Modern Front-End & Back-End Development</i></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-12" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect h-100">
+                            <img src="./assets/images/hkust.png" alt="HKUST">
+                            <h5 class="mt-4 mb-2">Full-Stack Web Development with Angular</h5>
+                            <p class="text-brand mb-0">HKUST (Coursera), 2021</p>
+                            <p class="mb-0"><i>Modern Front-End & Back-End Development</i></p>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- Certifications heading -->
+                <div class="row pb-4 mt-5 justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
+                        <h1>Certifications:</h1>
+                    </div>
+                </div>
+
+                <!-- Certification cards -->
+                <div class="row gy-4 justify-content-center">
+
+                    <div class="col-md-3 col-12" data-aos="fade-up" data-aos-delay="150">
+                        <a href="https://www.credly.com/badges/99458327-680a-4c4d-a2d8-8181b927e519/public_url" target="_blank" rel="noopener noreferrer" class="d-block h-100 text-decoration-none">
+                            <div class="service p-4 bg-base rounded-4 shadow-effect h-100 cert-card">
+                                <img src="./assets/images/aws-saa.png" alt="AWS SAA">
+                                <h5 class="mt-4 mb-2">Solutions Architect Associate</h5>
+                                <p class="text-brand mb-0">Amazon Web Services</p>
+                                <p class="mb-0"><i>2025</i></p>
+                                <p class="cert-verify mt-2 mb-0"><i class="las la-external-link-alt"></i> Verify on Credly</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 col-12" data-aos="fade-up" data-aos-delay="300">
+                        <a href="https://www.credly.com/badges/2ba1b142-7a6e-441f-af1b-b8ae2fab265c/public_url" target="_blank" rel="noopener noreferrer" class="d-block h-100 text-decoration-none">
+                            <div class="service p-4 bg-base rounded-4 shadow-effect h-100 cert-card">
+                                <img src="./assets/images/aws-aip.png" alt="AWS AIP">
+                                <h5 class="mt-4 mb-2">AI Practitioner</h5>
+                                <p class="text-brand mb-0">Amazon Web Services</p>
+                                <p class="mb-0"><i>2025</i></p>
+                                <p class="cert-verify mt-2 mb-0"><i class="las la-external-link-alt"></i> Verify on Credly</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 col-12" data-aos="fade-up" data-aos-delay="450">
+                        <a href="https://www.credly.com/badges/64af737d-03b2-4a7b-aac7-d4e958f8ecd1/public_url" target="_blank" rel="noopener noreferrer" class="d-block h-100 text-decoration-none">
+                            <div class="service p-4 bg-base rounded-4 shadow-effect h-100 cert-card">
+                                <img src="./assets/images/aws-ccp.png" alt="AWS CCP">
+                                <h5 class="mt-4 mb-2">Cloud Practitioner</h5>
+                                <p class="text-brand mb-0">Amazon Web Services</p>
+                                <p class="mb-0"><i>2025</i></p>
+                                <p class="cert-verify mt-2 mb-0"><i class="las la-external-link-alt"></i> Verify on Credly</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 col-12" data-aos="fade-up" data-aos-delay="600">
+                        <a href="https://www.credly.com/badges/8dab015f-0223-4c7f-8ced-8fae48d80216/public_url" target="_blank" rel="noopener noreferrer" class="d-block h-100 text-decoration-none">
+                            <div class="service p-4 bg-base rounded-4 shadow-effect h-100 cert-card">
+                                <img src="./assets/images/aws-wap.png" alt="AWS WAP">
+                                <h5 class="mt-4 mb-2">Well-Architected Proficient</h5>
+                                <p class="text-brand mb-0">Amazon Web Services</p>
+                                <p class="mb-0"><i>2025</i></p>
+                                <p class="cert-verify mt-2 mb-0"><i class="las la-external-link-alt"></i> Verify on Credly</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
+            <a href="#langs" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- //ABOUT -->
 
@@ -190,14 +256,14 @@
         <section id="langs" class="full-height px-lg-5">
             <div class="container">
 
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
+                <div class="row pb-4 justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
                         <h6 class="text-brand"><i>Hello, World!</i></h6>
                         <h1 class="text-brand2">Languages I speak:</h1>
                     </div>
                 </div>
 
-                <div class="row pb-4" data-aos="fade-up">
+                <div class="row pb-4 justify-content-center" data-aos="fade-up">
                     <div class="col-md-4" data-aos="fade-up">
                         <div class="service p-4 bg-base rounded-4 shadow-effect">
                             <img src="./assets/images/uk.png" alt="">
@@ -220,14 +286,14 @@
 
             <div class="container">
 
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
+                <div class="row pb-4 justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
                         <h6 class="text-brand"><i>And also...</i></h6>
                         <h1 class="text-brand2">Languages I Am Learning:</h1>
                     </div>
                 </div>
 
-                <div class="row pb-4" data-aos="fade-up">
+                <div class="row pb-4 justify-content-center" data-aos="fade-up">
                     <div class="col-md-4" data-aos="fade-up">
                         <div class="service p-4 bg-base rounded-4 shadow-effect">
                             <img src="./assets/images/sk.png" alt="">
@@ -247,6 +313,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#services" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!--/LANGUAGES-->
 
@@ -256,49 +323,67 @@
         <section id="services" class="full-height px-lg-5">
             <div class="container">
 
-                <div class="row pb-4" data-aos="fade-up">
-                    <div class="col-lg-8">
+                <div class="row pb-4 justify-content-center" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
                         <h6 class="text-brand">SERVICES</h6>
                         <h1>Services That I Provide</h1>
                     </div>
                 </div>
 
-                <div class="row gy-4">
+                <div class="row gy-4 justify-content-center">
 
-                    <div class="col-md-4" data-aos="fade-up">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-feather"></i>
+                    <div class="col-md-4 d-flex" data-aos="fade-up">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect w-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="iconbox rounded-4 flex-shrink-0">
+                                    <i class="las la-feather"></i>
+                                </div>
+                                <h5 class="mb-0">Software Engineering</h5>
                             </div>
-                            <h5 class="mt-4 mb-2">Software Engineering</h5>
-                            <p>Back-End Heavy programming for your software</p>
+                            <p>Back-End heavy programming for your software</p>
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-pencil-ruler"></i>
+                    <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect w-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="iconbox rounded-4 flex-shrink-0">
+                                    <i class="las la-pencil-ruler"></i>
+                                </div>
+                                <h5 class="mb-0">Front-End Development</h5>
                             </div>
-                            <h5 class="mt-4 mb-2">Front-End Development</h5>
                             <p>Framework-oriented web design</p>
                         </div>
                     </div>
 
-
-                    <div class="col-md-4" data-aos="fade-up">
-                        <div class="service p-4 bg-base rounded-4 shadow-effect">
-                            <div class="iconbox rounded-4">
-                                <i class="las la-feather"></i>
+                    <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect w-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="iconbox rounded-4 flex-shrink-0">
+                                    <i class="las la-project-diagram"></i>
+                                </div>
+                                <h5 class="mb-0">Software Architecture & Cloud Consulting</h5>
                             </div>
-                            <h5 class="mt-4 mb-2">Software Architecture & Cloud Consulting</h5>
                             <p>Building your next-gen solutions in the cloud, natively</p>
                         </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-delay="900">
+                        <div class="service p-4 bg-base rounded-4 shadow-effect w-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="iconbox rounded-4 flex-shrink-0">
+                                    <i class="las la-headset"></i>
+                                </div>
+                                <h5 class="mb-0">Contact Center with AWS Connect</h5>
+                            </div>
+                                            <p>Designing and deploying cloud contact center solutions with Amazon Connect, integrating AI and flow automation</p>
+        </div>
                     </div>
                 </div>
 
 
             </div>
+            <a href="#contact" class="section-chevron"><i class="las la-angle-down"></i></a>
         </section>
         <!-- SERVICES -->
 
@@ -335,6 +420,24 @@
                         <p class="mb-0">Designed by <a href="#" class="text-brand"><i>NikcQ</i></a></p>
                     </div>
                     <div class="col-auto">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //FOOTER -->
+
+    </div>
+    <!-- //CONTENT WRAPPER -->
+
+
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
+>
                     </div>
                 </div>
             </div>
