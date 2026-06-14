@@ -11,6 +11,10 @@
     --font-base: "Helvetica";
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--color-base2);
     color: var(--color-body);
